@@ -28,23 +28,23 @@ function App() {
             <Router>
                 <Header text='Feedback UI' />
                 <div className='container'>
-                <Routes>
-                    <Route
-                    path='/'
-                    element={
-                        <>
-                        <FeedbackForm />
-                        <FeedbackStats feedback={feedback} />
-                        <FeedbackList feedback={feedback}/>
-                        </>
-                    }
-                    ></Route>
+                    <Routes>
+                        <Route
+                        path='/'
+                        element={
+                            <>
+                            <FeedbackForm handleAdd={addFeedback} handleDelete={deleteReview}/>
+                            <FeedbackStats feedback={feedback} />
+                            <FeedbackList feedback={feedback}/>
+                            </>
+                        }
+                        ></Route>
 
-                    <Route path='/about' element={<AboutPage />} />
-                </Routes>
+                        <Route path='/about' element={<AboutPage />} />
+                    </Routes>
 
-                <AboutIconLink />
                 </div>
+                <AboutIconLink />
             </Router>
         </>
 
